@@ -15,8 +15,10 @@ class DosMat extends Migration
     {
         Schema::create('Dos_mat', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('Id_Dosen');
-            $table->integer('Id_Matkul');
+            $table->unsignedInteger('Id_Dosen');
+            $table->unsignedInteger('Id_Matkul');
+            $table->foreign('Id_Dosen')->references('id')->on('Dosen')->onDelete('cascade');
+            $table->foreign('Id_Matkul')->references('id')->on('Matkul')->onDelete('cascade');
             $table->integer('semester');
             $table->timestamps();
         });

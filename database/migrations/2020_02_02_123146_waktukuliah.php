@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Matkul extends Migration
+class Waktukuliah extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class Matkul extends Migration
      */
     public function up()
     {
-        Schema::create('Matkul', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('Nama');
-            $table->timestamps();
+        Schema::table('surattugas', function (Blueprint $table) {
+            $table->string('akhirkuliah');
+            $table->string('Semester');
         });
     }
 
@@ -27,6 +26,8 @@ class Matkul extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Matkul');
+        Schema::table('surattugas', function (Blueprint $table) {
+            //
+        });
     }
 }

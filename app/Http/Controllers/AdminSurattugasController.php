@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminDosMatController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminSurattugasController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -23,74 +23,47 @@
 			$this->button_detail = true;
 			$this->button_show = true;
 			$this->button_filter = true;
-			$this->button_import = true;
-			$this->button_export = true;
-			$this->table = "dos_mat";
+			$this->button_import = false;
+			$this->button_export = false;
+			$this->table = "surattugas";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Mata Kuliah","name"=>"Id_Matkul","join"=>"matkul,Nama"];
-			$this->col[] = ["label"=>"Semester","name"=>"semester"];
-			$this->col[] = ["label"=>"Kelas","name"=>"Kelas"];
-			$this->col[] = ["label"=>"SKS","name"=>"SKS"];
-			$this->col[] = ["label"=>"Jurusan Id","name"=>"Jurusan_id","join"=>"Jurusan,Nama"];
-			$this->col[] = ["label"=>"Ruang","name"=>"","callback"=>function($row) {
-				$jadwal=DB::table('kelas_jam')->where('id_dos_mat',$row->id)->get();
-				if(count($jadwal)){
-					$t_jadwal=null;
-					foreach($jadwal as $j){
-						$kelas=DB::table('kelas')->find($j->Id_Kelas);
-						$t_jadwal.=$kelas->Nama."<br>";
-					}
-					return $t_jadwal;
-				}
-				return 'Kosong';
-				}];
-			$this->col[] = ["label"=>"Hari","name"=>"","callback"=>function($row) {
-				$jadwal=DB::table('kelas_jam')->where('id_dos_mat',$row->id)->get();
-				if(count($jadwal)){
-					$t_jadwal=null;
-					foreach($jadwal as $j){
-						$kelas=DB::table('kelas')->find($j->Id_Kelas);
-						$t_jadwal.=$j->Hari."<br>";
-					}
-					return $t_jadwal;
-				}
-				return 'Kosong';
-				}];
-			$this->col[] = ["label"=>"Jam","name"=>"","callback"=>function($row) {
-				$jadwal=DB::table('kelas_jam')->where('id_dos_mat',$row->id)->get();
-				if(count($jadwal)){
-					$t_jadwal=null;
-					foreach($jadwal as $j){
-						$jam=DB::table('jam')->find($j->Id_Jadwal);
-						$t_jadwal.=$jam->Jam."<br>";
-					}
-					return $t_jadwal;
-				}
-				return 'Kosong';
-				}];
+			$this->col[] = ["label"=>"Semester","name"=>"Semester"];
+			$this->col[] = ["label"=>"Nomersrt","name"=>"nomersrt"];
+			$this->col[] = ["label"=>"Bulan","name"=>"bulan"];
+			$this->col[] = ["label"=>"Tahun","name"=>"tahun"];
+			$this->col[] = ["label"=>"Tahunakademik","name"=>"tahunakademik"];
+			$this->col[] = ["label"=>"Tanggalrapat","name"=>"tanggalrapat"];
+			$this->col[] = ["label"=>"Waktukuliah","name"=>"waktukuliah"];
+			$this->col[] = ["label"=>"Akhirkuliah","name"=>"akhirkuliah"];
+			$this->col[] = ["label"=>"Tanggalsurat","name"=>"tanggalsurat"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Id Dosen','name'=>'Id_Dosen','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'dosen,Nama'];
-			$this->form[] = ['label'=>'Id Matkul','name'=>'Id_Matkul','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'matkul,Nama'];
-			$this->form[] = ['label'=>'Semester','name'=>'semester','type'=>'select2','validation'=>'required','width'=>'col-sm-9','dataenum'=>'1;2;3;4;5;6;7;8'];
-			$this->form[] = ['label'=>'Kelas','name'=>'Kelas','type'=>'select2','validation'=>'required','width'=>'col-sm-9','dataenum'=>'A;B;C;D;E'];
-			$this->form[] = ['label'=>'SKS','name'=>'SKS','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jurusan Id','name'=>'Jurusan_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'Jurusan,Nama'];
+			$this->form[] = ['label'=>'Semester','name'=>'Semester','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Nomersrt','name'=>'nomersrt','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Bulan','name'=>'bulan','type'=>'number','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tahun','name'=>'tahun','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tahunakademik','name'=>'tahunakademik','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tanggalrapat','name'=>'tanggalrapat','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Waktukuliah','name'=>'waktukuliah','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Akhirkuliah','name'=>'akhirkuliah','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Tanggalsurat','name'=>'tanggalsurat','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Id Dosen','name'=>'Id_Dosen','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'dosen,Nama'];
-			//$this->form[] = ['label'=>'Id Matkul','name'=>'Id_Matkul','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'matkul,Nama'];
-			//$this->form[] = ['label'=>'Semester','name'=>'semester','type'=>'select2','validation'=>'required','width'=>'col-sm-9','dataenum'=>'1;2;3;4;5;6;7;8'];
-			//$this->form[] = ['label'=>'Kelas','name'=>'Kelas','type'=>'select2','validation'=>'required','width'=>'col-sm-9','dataenum'=>'A;B;C;D;E'];
-			//$this->form[] = ['label'=>'SKS','name'=>'SKS','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jurusan Id','name'=>'jurusan','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'jurusan,nama'];
+			//$this->form[] = ['label'=>'Nomersrt','name'=>'nomersrt','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Bulan','name'=>'bulan','type'=>'number','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tahun','name'=>'tahun','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tahunakademik','name'=>'tahunakademik','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tanggalrapat','name'=>'tanggalrapat','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Waktukuliah','name'=>'waktukuliah','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Akhirkuliah','name'=>'akhirkuliah','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Tanggalsurat','name'=>'tanggalsurat','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 
@@ -106,7 +79,6 @@
 	        | 
 	        */
 	        $this->sub_module = array();
-			// $this->sub_module[] = ['label'=>'Jadwal','path'=>'kelas_jam','parent_columns'=>'id','foreign_key'=>'id_dos_mat','button_color'=>'success','button_icon'=>'fa fa-bars'];
 
 
 	        /* 
@@ -121,11 +93,6 @@
 	        | 
 	        */
 	        $this->addaction = array();
-	        $this->addaction[] = [
-				'label'=>'Jadwal',
-				'url'=>url('admin/kelas_jam?id=[id]'),
-				'color'=>'success',
-			];
 
 
 	        /* 

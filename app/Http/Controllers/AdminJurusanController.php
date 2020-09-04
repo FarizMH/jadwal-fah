@@ -29,15 +29,25 @@
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
-	        $this->col = [];
-			$this->col[] = array("label"=>"Nama","name"=>"Nama" );
-
+			$this->col = [];
+			$this->col[] = ["label"=>"No","name"=>"id"];
+			$this->col[] = ["label"=>"Nama","name"=>"Nama"];
+			$this->col[] = ["label"=>"Singkatan","name"=>"singkatan"];
+			$this->col[] = ["label"=>"Kode","name"=>"kode"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
-			# START FORM DO NOT REMOVE THIS LINE
-		$this->form = [];
-		$this->form[] = ["label"=>"Nama","name"=>"Nama","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 
-			# END FORM DO NOT REMOVE THIS LINE     
+			# START FORM DO NOT REMOVE THIS LINE
+			$this->form = [];
+			$this->form[] = ['label'=>'Nama','name'=>'Nama','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Kode','name'=>'kode','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Singkatan','name'=>'singkatan','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			# END FORM DO NOT REMOVE THIS LINE
+
+			# OLD START FORM
+			//$this->form = [];
+			//$this->form[] = ["label"=>"Nama","name"=>"Nama","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Singkatan","name"=>"singkatan","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			# OLD END FORM
 
 			/* 
 	        | ---------------------------------------------------------------------- 
@@ -66,6 +76,7 @@
 	        | 
 	        */
 	        $this->addaction = array();
+	        $this->addaction[] = ['label'=>'Print','url'=>CRUDBooster::mainpath('Print/[id]'),'icon'=>'fa fa-check','color'=>'success'];
 
 
 	        /* 

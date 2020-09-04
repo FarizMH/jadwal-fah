@@ -15,10 +15,14 @@ class KelasJam extends Migration
     {
         Schema::create('kelas_Jam', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('Id_Kelas');
-            $table->integer('Id_Jadwal');
-            $table->integer('id_dos_mat')->nullable();
+            $table->unsignedInteger('Id_Kelas');
+            $table->unsignedInteger('Id_Jadwal');
+            $table->unsignedInteger('id_dos_mat')->nullable();
+            $table->foreign('Id_Kelas')->references('id')->on('Kelas')->onDelete('cascade');
+            $table->foreign('Id_Jadwal')->references('id')->on('Jam')->onDelete('cascade');
+            $table->foreign('id_dos_mat')->references('id')->on('Dos_mat')->onDelete('cascade');
             $table->string('Hari');
+
             $table->timestamps();
         });
     }

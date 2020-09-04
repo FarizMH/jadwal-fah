@@ -23,7 +23,7 @@
 			$this->button_detail = true;
 			$this->button_show = true;
 			$this->button_filter = true;
-			$this->button_import = false;
+			$this->button_import = true;
 			$this->button_export = false;
 			$this->table = "kelas";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
@@ -66,6 +66,7 @@
 	        | 
 	        */
 	        $this->addaction = array();
+	        
 
 
 	        /* 
@@ -273,6 +274,7 @@
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Rabu'],
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Kamis'],
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Jumat'],
+				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Sabtu'],
 			]);
 			}
 			}
@@ -316,6 +318,7 @@
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Rabu'],
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Kamis'],
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Jumat'],
+				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Sabtu'],
 			]);
 			}
 			}

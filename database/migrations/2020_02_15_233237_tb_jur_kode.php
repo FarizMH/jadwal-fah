@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Matkul extends Migration
+class TbJurKode extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class Matkul extends Migration
      */
     public function up()
     {
-        Schema::create('Matkul', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('Nama');
-            $table->timestamps();
+        Schema::table('jurusan', function (Blueprint $table) {
+            //
+            $table->string('kode')->nullable();
         });
     }
 
@@ -27,6 +26,9 @@ class Matkul extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Matkul');
+        Schema::table('jurusan', function (Blueprint $table) {
+            //
+            $table->dropColumn(["kode"]);
+        });
     }
 }

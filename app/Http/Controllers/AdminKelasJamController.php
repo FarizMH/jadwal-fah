@@ -117,7 +117,6 @@
 	        */
 			$this->button_selected = array();
 			$JatahSKS=DB::table('dos_mat')->find($_GET['id']);
-			$JatahSKS=DB::table('matkul')->find($JatahSKS->Id_Matkul);
 			$JumSKS=DB::table('kelas_jam')->where('id_dos_mat',$_GET['id'])->count();
 			if($JatahSKS->SKS > $JumSKS){
 				$this->button_selected[] = ['label'=>'Ambil Jadwal','icon'=>'fa fa-check','name'=>'ambil|'.$_GET['id']];
@@ -259,8 +258,10 @@
 			$button_name=$button_name[0];
 			if($button_name == 'ambil') {
 				$JatahSKS=DB::table('dos_mat')->find($data);
-				$JatahSKS=DB::table('matkul')->find($JatahSKS->Id_Matkul);
 				$JumSKS=DB::table('kelas_jam')->where('id_dos_mat',$data)->count()+count($id_selected);
+				// BISI ERROR KASIH KOMEN AJA
+				$JumSKS*=2;
+				// 
 				if($JatahSKS->SKS < $JumSKS){
 					return CRUDBooster::redirect(url('admin/kelas_jam?id='.$data),"Melebihi Jumlah SKS", 'warning');
 					exit();
@@ -276,6 +277,9 @@
 			if($button_name == 'hapus') {
 				DB::table('kelas_jam')->whereIn('id',$id_selected)->where('id_dos_mat',$data)->update(['id_dos_mat'=>null]);
 			}
+			$dos_mat=DB::table('dos_mat')->find($data);
+			$JumSKSDiambil=DB::table('dos_mat')->select(DB::RAW('sum(SKS) as jumlah_sks'))->where('Id_Dosen',$dos_mat->Id_Dosen)->first();
+			DB::table('dosen')->where('id',$dos_mat->Id_Dosen)->update(['jumlah_sks_diambil'=>$JumSKSDiambil->jumlah_sks]);
 	    }
 
 

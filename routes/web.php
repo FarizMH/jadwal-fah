@@ -14,3 +14,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/dosen/Print/{id}',[
+    'as' => 'dosen.print',
+    'uses' => 'PrintController@index'
+]);
+Route::post('/admin/dosen/Print/{id}/cetak',[
+    'as' => 'dosen.cetak',
+    'uses' => 'PrintController@cetak'
+]);
+
+Route::get('/admin/jurusan/Print/{id}',[
+    'as' => 'jurusan.print',
+    'uses' => 'JadwalJurusanController@index'
+]);
+
+// Route::post('/admin/kelas/Print/{id}/cetak',[
+//     'as' => 'kelas.cetak',
+//     'uses' => 'JadwalKelasController@cetak'
+// ]);

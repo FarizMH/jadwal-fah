@@ -60,7 +60,7 @@
 	        | 
 	        */
 			$this->sub_module = array();
-			$this->sub_module[] = ['label'=>'MataKuliah','path'=>'dos_mat','parent_columns'=>'NIP,Nama','foreign_key'=>'Id_Dosen','button_color'=>'success','button_icon'=>'fa fa-bars'];
+			$this->sub_module[] = ['label'=>'MataKuliah','path'=>'dos_mat','parent_columns'=>'NIP,Nama,jumlah_sks_diambil','foreign_key'=>'Id_Dosen','button_color'=>'success','button_icon'=>'fa fa-bars'];
 
 
 
@@ -76,6 +76,8 @@
 	        | 
 	        */
 	        $this->addaction = array();
+	        $this->addaction[] = ['label'=>'Print','url'=>CRUDBooster::mainpath('Print/[id]'),'icon'=>'fa fa-check','color'=>'success'];
+
 
 
 	        /* 

@@ -273,6 +273,7 @@
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Rabu'],
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Kamis'],
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Jumat'],
+				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Sabtu'],
 			]);
 			}
 			}
@@ -315,7 +316,7 @@
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Selasa'],
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Rabu'],
 				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Kamis'],
-				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Jumat'],
+				['id_Kelas' => $kelas->id , 'id_Jadwal' => $jam->id , 'Hari' => 'Sabtu'],
 			]);
 			}
 			}
