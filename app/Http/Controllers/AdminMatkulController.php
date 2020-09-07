@@ -26,12 +26,12 @@
 			$this->button_import = true;
 			$this->button_export = false;
 			$this->table = "matkul";
-			# END CONFIGURATION DO NOT REMOVE THsIS LINE
+			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Nama","name"=>"Nama"];
-			$this->col[] = ["label"=>"Kode Mks","name"=>"kode_mk"];
+			$this->col[] = ["label"=>"Kode Mk","name"=>"kode_mk"];
 			$this->col[] = ["label"=>"Semester","name"=>"semester"];
 			$this->col[] = ["label"=>"Jurusan","name"=>"jurusan"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
@@ -41,7 +41,7 @@
 			$this->form[] = ['label'=>'Nama','name'=>'Nama','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Kode Mk','name'=>'kode_mk','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Semester','name'=>'semester','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Jurusan','name'=>'id','type'=>'select2','validation'=>'required','width'=>'col-sm-9','datatable'=>'jurusan,nama'];
+			$this->form[] = ['label'=>'Jurusan','name'=>'jurusan','type'=>'select','validation'=>'required','width'=>'col-sm-9','dataenum'=>'SEJARAH DAN PERADABAN ISLAM;SATRA INGGRIS;BAHASA DAN SASTRA ARAB'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
