@@ -80,6 +80,6 @@ class PrintController extends Controller
 	  $data['kelas'] = $kelas;
 	  $data['id'] = $id;
 	  // dd($data['matakuliah']);
-	  return view('cetak',$data);
+	  return view('surat-tugas',$data);
     }
 }
