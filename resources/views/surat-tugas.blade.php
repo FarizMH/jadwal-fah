@@ -936,14 +936,14 @@ line-height:normal'><v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="
  <o:lock v:ext="edit" aspectratio="t"/>
 </v:shapetype><v:shape id="Picture_x0020_4" o:spid="_x0000_s1028" type="#_x0000_t75"
  style='position:absolute;left:0;text-align:left;margin-left:36.6pt;
- margin-top:-13.5pt;width:60.25pt;height:75.2pt;z-index:251662336;visibility:visible;
+ margin-top:3.5pt;width:60.25pt;height:75.2pt;z-index:251662336;visibility:visible;
  mso-wrap-style:square;mso-width-percent:0;mso-height-percent:0;
  mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;mso-wrap-distance-right:9pt;
  mso-wrap-distance-bottom:0;mso-position-horizontal:absolute;
  mso-position-horizontal-relative:text;mso-position-vertical:absolute;
  mso-position-vertical-relative:text;mso-width-percent:0;mso-height-percent:0;
  mso-width-relative:page;mso-height-relative:page'>
- <img width="81" height="94" src="{{url('OK UIN.png')}}" 
+ <img width="81" height="80" src="{{url('OK UIN.png')}}" 
   o:title="" v:shapes="Picture_x0020_24"/>
 
 </v:shape><b style='mso-bidi-font-weight:normal'><span lang=EN-US
@@ -1771,14 +1771,14 @@ line-height:normal'><v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="
  <o:lock v:ext="edit" aspectratio="t"/>
 </v:shapetype><v:shape id="Picture_x0020_4" o:spid="_x0000_s1028" type="#_x0000_t75"
  style='position:absolute;left:0;text-align:left;margin-left:36.6pt;
- margin-top:-13.5pt;width:60.25pt;height:75.2pt;z-index:251662336;visibility:visible;
+ margin-top:3.5pt;width:60.25pt;height:75.2pt;z-index:251662336;visibility:visible;
  mso-wrap-style:square;mso-width-percent:0;mso-height-percent:0;
  mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;mso-wrap-distance-right:9pt;
  mso-wrap-distance-bottom:0;mso-position-horizontal:absolute;
  mso-position-horizontal-relative:text;mso-position-vertical:absolute;
  mso-position-vertical-relative:text;mso-width-percent:0;mso-height-percent:0;
  mso-width-relative:page;mso-height-relative:page'>
- <img width="81" height="94" src="{{url('OK UIN.png')}}" 
+ <img width="81" height="80" src="{{url('OK UIN.png')}}" 
   o:title="" v:shapes="Picture_x0020_24"/>
 
 </v:shape><b style='mso-bidi-font-weight:normal'><span lang=EN-US
